@@ -1,0 +1,339 @@
+login as: pi
+pi@192.168.43.98's password:
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Feb 26 18:35:57 2016
+pi@raspberrypi:~ $ mkdir ~/node_led
+pi@raspberrypi:~ $ cd  ~/node_led
+pi@raspberrypi:~/node_led $ mkdir public
+pi@raspberrypi:~/node_led $ npm install express -g
+npm ERR! tar.unpack untar error /home/pi/.npm/express/4.13.4/package.tgz
+npm ERR! Linux 4.1.13-v7+
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "express" "-g"
+npm ERR! node v4.0.0
+npm ERR! npm  v2.14.2
+npm ERR! path /usr/local/lib/node_modules/express
+npm ERR! code EACCES
+npm ERR! errno -13
+npm ERR! syscall mkdir
+
+npm ERR! Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/express'
+npm ERR!     at Error (native)
+npm ERR!  { [Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/express']
+npm ERR!   errno: -13,
+npm ERR!   code: 'EACCES',
+npm ERR!   syscall: 'mkdir',
+npm ERR!   path: '/usr/local/lib/node_modules/express',
+npm ERR!   fstream_type: 'Directory',
+npm ERR!   fstream_path: '/usr/local/lib/node_modules/express',
+npm ERR!   fstream_class: 'DirWriter',
+npm ERR!   fstream_stack:
+npm ERR!    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25',
+npm ERR!      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53',
+npm ERR!      'FSReqWrap.oncomplete (fs.js:82:15)' ] }
+npm ERR!
+npm ERR! Please try running this command again as root/Administrator.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/pi/node_led/npm-debug.log
+pi@raspberrypi:~/node_led $ sudo npm install express -g
+express@4.13.4 /usr/local/lib/node_modules/express
++-- escape-html@1.0.3
++-- array-flatten@1.1.1
++-- utils-merge@1.0.0
++-- cookie-signature@1.0.6
++-- merge-descriptors@1.0.1
++-- fresh@0.3.0
++-- methods@1.1.2
++-- range-parser@1.0.3
++-- vary@1.0.1
++-- path-to-regexp@0.1.7
++-- parseurl@1.3.1
++-- cookie@0.1.5
++-- content-type@1.0.1
++-- etag@1.7.0
++-- content-disposition@0.5.1
++-- serve-static@1.10.2
++-- depd@1.1.0
++-- qs@4.0.0
++-- debug@2.2.0 (ms@0.7.1)
++-- finalhandler@0.4.1 (unpipe@1.0.0)
++-- on-finished@2.3.0 (ee-first@1.1.1)
++-- proxy-addr@1.0.10 (forwarded@0.1.0, ipaddr.js@1.0.5)
++-- type-is@1.6.11 (media-typer@0.3.0, mime-types@2.1.10)
++-- accepts@1.2.13 (negotiator@0.5.3, mime-types@2.1.10)
++-- send@0.13.1 (destroy@1.0.4, statuses@1.2.1, ms@0.7.1, mime@1.3.4, http-errors@1.3.1)
+pi@raspberrypi:~/node_led $ sudo npm install socket.io -g
+socket.io@1.4.5 /usr/local/lib/node_modules/socket.io
++-- debug@2.2.0 (ms@0.7.1)
++-- has-binary@0.1.7 (isarray@0.0.1)
++-- socket.io-parser@2.2.6 (isarray@0.0.1, component-emitter@1.1.2, json3@3.3.2, benchmark@1.0.0)
++-- socket.io-adapter@0.4.0 (socket.io-parser@2.2.2)
++-- engine.io@1.6.8 (base64id@0.1.0, ws@1.0.1, accepts@1.1.4, engine.io-parser@1.2.4)
++-- socket.io-client@1.4.5 (to-array@0.1.4, indexof@0.0.1, component-emitter@1.2.0, object-component@0.0.3, component-bind@1.0.0, backo2@1.0.2, parseuri@0.0.4, engine.io-client@1.6.8)
+pi@raspberrypi:~/node_led $ sudo npm install serialport -g
+/usr/local/bin/serialportlist -> /usr/local/lib/node_modules/serialport/bin/serialportList.js
+/usr/local/bin/serialportterm -> /usr/local/lib/node_modules/serialport/bin/serialportTerminal.js
+
+> serialport@2.0.6 install /usr/local/lib/node_modules/serialport
+> node-pre-gyp install --fallback-to-build
+
+gyp WARN EACCES user "root" does not have permission to access the dev dir "/root/.node-gyp/4.0.0"
+gyp WARN EACCES attempting to reinstall using temporary dev dir "/usr/local/lib/node_modules/serialport/.node-gyp"
+make: Entering directory '/usr/local/lib/node_modules/serialport/build'
+make: *** No rule to make target '../.node-gyp/4.0.0/include/node/common.gypi', needed by 'Makefile'.  Stop.
+make: Leaving directory '/usr/local/lib/node_modules/serialport/build'
+gyp ERR! build error
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/local/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:270:23)
+gyp ERR! stack     at emitTwo (events.js:87:13)
+gyp ERR! stack     at ChildProcess.emit (events.js:172:7)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:200:12)
+gyp ERR! System Linux 4.1.13-v7+
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "build" "--fallback-to-build" "--module=/usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm/serialport.node" "--module_name=serialport" "--module_path=/usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm"
+gyp ERR! cwd /usr/local/lib/node_modules/serialport
+gyp ERR! node -v v4.0.0
+gyp ERR! node-gyp -v v3.0.1
+gyp ERR! not ok
+node-pre-gyp ERR! build error
+node-pre-gyp ERR! stack Error: Failed to execute '/usr/local/bin/node /usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js build --fallback-to-build --module=/usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm/serialport.node --module_name=serialport --module_path=/usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm' (1)
+node-pre-gyp ERR! stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/serialport/node_modules/node-pre-gyp/lib/util/compile.js:83:29)
+node-pre-gyp ERR! stack     at emitTwo (events.js:87:13)
+node-pre-gyp ERR! stack     at ChildProcess.emit (events.js:172:7)
+node-pre-gyp ERR! stack     at maybeClose (internal/child_process.js:817:16)
+node-pre-gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+node-pre-gyp ERR! System Linux 4.1.13-v7+
+node-pre-gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/serialport/node_modules/.bin/node-pre-gyp" "install" "--fallback-to-build"
+node-pre-gyp ERR! cwd /usr/local/lib/node_modules/serialport
+node-pre-gyp ERR! node -v v4.0.0
+node-pre-gyp ERR! node-pre-gyp -v v0.6.18
+node-pre-gyp ERR! not ok
+Failed to execute '/usr/local/bin/node /usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js build --fallback-to-build --module=/usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm/serialport.node --module_name=serialport --module_path=/usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm' (1)
+npm ERR! Linux 4.1.13-v7+
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "serialport" "-g"
+npm ERR! node v4.0.0
+npm ERR! npm  v2.14.2
+npm ERR! code ELIFECYCLE
+
+npm ERR! serialport@2.0.6 install: `node-pre-gyp install --fallback-to-build`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the serialport@2.0.6 install script 'node-pre-gyp install --fallback-to-build'.
+npm ERR! This is most likely a problem with the serialport package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node-pre-gyp install --fallback-to-build
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls serialport
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/pi/node_led/npm-debug.log
+pi@raspberrypi:~/node_led $ sudo npm install serialport -g
+/usr/local/bin/serialportlist -> /usr/local/lib/node_modules/serialport/bin/serialportList.js
+/usr/local/bin/serialportterm -> /usr/local/lib/node_modules/serialport/bin/serialportTerminal.js
+
+> serialport@2.0.6 install /usr/local/lib/node_modules/serialport
+> node-pre-gyp install --fallback-to-build
+
+gyp WARN EACCES user "root" does not have permission to access the dev dir "/root/.node-gyp/4.0.0"
+gyp WARN EACCES attempting to reinstall using temporary dev dir "/usr/local/lib/node_modules/serialport/.node-gyp"
+make: Entering directory '/usr/local/lib/node_modules/serialport/build'
+make: *** No rule to make target '../.node-gyp/4.0.0/include/node/common.gypi', needed by 'Makefile'.  Stop.
+make: Leaving directory '/usr/local/lib/node_modules/serialport/build'
+gyp ERR! build error
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/local/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:270:23)
+gyp ERR! stack     at emitTwo (events.js:87:13)
+gyp ERR! stack     at ChildProcess.emit (events.js:172:7)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:200:12)
+gyp ERR! System Linux 4.1.13-v7+
+gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "build" "--fallback-to-build" "--module=/usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm/serialport.node" "--module_name=serialport" "--module_path=/usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm"
+gyp ERR! cwd /usr/local/lib/node_modules/serialport
+gyp ERR! node -v v4.0.0
+gyp ERR! node-gyp -v v3.0.1
+gyp ERR! not ok
+node-pre-gyp ERR! build error
+node-pre-gyp ERR! stack Error: Failed to execute '/usr/local/bin/node /usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js build --fallback-to-build --module=/usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm/serialport.node --module_name=serialport --module_path=/usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm' (1)
+node-pre-gyp ERR! stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/serialport/node_modules/node-pre-gyp/lib/util/compile.js:83:29)
+node-pre-gyp ERR! stack     at emitTwo (events.js:87:13)
+node-pre-gyp ERR! stack     at ChildProcess.emit (events.js:172:7)
+node-pre-gyp ERR! stack     at maybeClose (internal/child_process.js:817:16)
+node-pre-gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+node-pre-gyp ERR! System Linux 4.1.13-v7+
+node-pre-gyp ERR! command "/usr/local/bin/node" "/usr/local/lib/node_modules/serialport/node_modules/.bin/node-pre-gyp" "install" "--fallback-to-build"
+node-pre-gyp ERR! cwd /usr/local/lib/node_modules/serialport
+node-pre-gyp ERR! node -v v4.0.0
+node-pre-gyp ERR! node-pre-gyp -v v0.6.18
+node-pre-gyp ERR! not ok
+Failed to execute '/usr/local/bin/node /usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js build --fallback-to-build --module=/usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm/serialport.node --module_name=serialport --module_path=/usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm' (1)
+npm ERR! Linux 4.1.13-v7+
+npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "serialport" "-g"
+npm ERR! node v4.0.0
+npm ERR! npm  v2.14.2
+npm ERR! code ELIFECYCLE
+
+npm ERR! serialport@2.0.6 install: `node-pre-gyp install --fallback-to-build`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the serialport@2.0.6 install script 'node-pre-gyp install --fallback-to-build'.
+npm ERR! This is most likely a problem with the serialport package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node-pre-gyp install --fallback-to-build
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls serialport
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/pi/node_led/npm-debug.log
+pi@raspberrypi:~/node_led $ node -e "console.log(require('serialport'));"
+module.js:338
+    throw err;
+    ^
+
+Error: Cannot find module 'serialport'
+    at Function.Module._resolveFilename (module.js:336:15)
+    at Function.Module._load (module.js:286:25)
+    at Module.require (module.js:365:17)
+    at require (module.js:384:17)
+    at [eval]:1:13
+    at Object.exports.runInThisContext (vm.js:54:17)
+    at Object.<anonymous> ([eval]-wrapper:6:22)
+    at Module._compile (module.js:434:26)
+    at node.js:566:27
+    at doNTCallback0 (node.js:407:9)
+pi@raspberrypi:~/node_led $
+sudo npm insta
+sudo npm install --unsafe-perm serialport
+
+Usage: npm <command>
+
+where <command> is one of:
+    access, add-user, adduser, apihelp, author, bin, bugs, c,
+    cache, completion, config, ddp, dedupe, deprecate, dist-tag,
+    dist-tags, docs, edit, explore, faq, find, find-dupes, get,
+    help, help-search, home, i, info, init, install, issues, la,
+    link, list, ll, ln, login, logout, ls, outdated, owner,
+    pack, ping, prefix, prune, publish, r, rb, rebuild, remove,
+    repo, restart, rm, root, run-script, s, se, search, set,
+    show, shrinkwrap, star, stars, start, stop, t, tag, team,
+    test, tst, un, uninstall, unlink, unpublish, unstar, up,
+    update, upgrade, v, verison, version, view, whoami
+
+npm <cmd> -h     quick help on <cmd>
+npm -l           display full usage info
+npm faq          commonly asked questions
+npm help <term>  search for help on <term>
+npm help npm     involved overview
+
+Specify configs in the ini-formatted file:
+    /root/.npmrc
+or on the command line via: npm <command> --key value
+Config info can be viewed via: npm help config
+
+npm@2.14.2 /usr/local/lib/node_modules/npm
+pi@raspberrypi:~/node_led $ sudo npm instasudo npm install --unsafe-perm serialpo
+
+Usage: npm <command>
+
+where <command> is one of:
+    access, add-user, adduser, apihelp, author, bin, bugs, c,
+    cache, completion, config, ddp, dedupe, deprecate, dist-tag,
+    dist-tags, docs, edit, explore, faq, find, find-dupes, get,
+    help, help-search, home, i, info, init, install, issues, la,
+    link, list, ll, ln, login, logout, ls, outdated, owner,
+    pack, ping, prefix, prune, publish, r, rb, rebuild, remove,
+    repo, restart, rm, root, run-script, s, se, search, set,
+    show, shrinkwrap, star, stars, start, stop, t, tag, team,
+    test, tst, un, uninstall, unlink, unpublish, unstar, up,
+    update, upgrade, v, verison, version, view, whoami
+
+npm <cmd> -h     quick help on <cmd>
+npm -l           display full usage info
+npm faq          commonly asked questions
+npm help <term>  search for help on <term>
+npm help npm     involved overview
+
+Specify configs in the ini-formatted file:
+    /root/.npmrc
+or on the command line via: npm <command> --key value
+Config info can be viewed via: npm help config
+
+npm@2.14.2 /usr/local/lib/node_modules/npm
+pi@raspberrypi:~/node_led $ ls /dev |grep ttyAcm
+pi@raspberrypi:~/node_led $ cd
+pi@raspberrypi:~ $ ls /dev |grep ttyAcm
+pi@raspberrypi:~ $ node -e "console.log(require('serialport'));"
+module.js:338
+    throw err;
+    ^
+
+Error: Cannot find module 'serialport'
+    at Function.Module._resolveFilename (module.js:336:15)
+    at Function.Module._load (module.js:286:25)
+    at Module.require (module.js:365:17)
+    at require (module.js:384:17)
+    at [eval]:1:13
+    at Object.exports.runInThisContext (vm.js:54:17)
+    at Object.<anonymous> ([eval]-wrapper:6:22)
+    at Module._compile (module.js:434:26)
+    at node.js:566:27
+    at doNTCallback0 (node.js:407:9)
+pi@raspberrypi:~ $ sudo npm install --unsafe-perm serialport -g
+/usr/local/bin/serialportlist -> /usr/local/lib/node_modules/serialport/bin/serialportList.js
+/usr/local/bin/serialportterm -> /usr/local/lib/node_modules/serialport/bin/serialportTerminal.js
+
+> serialport@2.0.6 install /usr/local/lib/node_modules/serialport
+> node-pre-gyp install --fallback-to-build
+
+make: Entering directory '/usr/local/lib/node_modules/serialport/build'
+  CXX(target) Release/obj.target/serialport/src/serialport.o
+  CXX(target) Release/obj.target/serialport/src/serialport_unix.o
+  CXX(target) Release/obj.target/serialport/src/serialport_poller.o
+  SOLINK_MODULE(target) Release/obj.target/serialport.node
+  COPY Release/serialport.node
+  COPY /usr/local/lib/node_modules/serialport/build/Release/node-v46-linux-arm/serialport.node
+  TOUCH Release/obj.target/action_after_build.stamp
+make: Leaving directory '/usr/local/lib/node_modules/serialport/build'
+serialport@2.0.6 /usr/local/lib/node_modules/serialport
++-- bindings@1.2.1
++-- sf@0.1.7
++-- async@0.9.0
++-- nan@2.0.9
++-- debug@2.2.0 (ms@0.7.1)
++-- optimist@0.6.1 (wordwrap@0.0.3, minimist@0.0.10)
+pi@raspberrypi:~ $ ls /dev | grep ttyACMls
+pi@raspberrypi:~ $ cd node_led
+pi@raspberrypi:~/node_led $ nodejs main.js
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module 'express'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/home/pi/node_led/main.js:4:11)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Function.Module.runMain (module.js:497:10)
+pi@raspberrypi:~/node_led $ npm install express
+^C
+pi@raspberrypi:~/node_led $  Cannot find module 'express'
+-bash: Cannot: command not found
+pi@raspberrypi:~/node_led $     at Function.Module._resolveFilename (module.js:338:15)
+-bash: syntax error near unexpected token `('
+pi@raspberrypi:~/node_led $  Cannot find module 'express'
+-bash: Cannot: command not found
+pi@raspberrypi:~/node_led $     at Function.Module._resolveFilename (module.js:338:15)
+-bash: syntax error near unexpected token `('
+pi@raspberrypi:~/node_led $
