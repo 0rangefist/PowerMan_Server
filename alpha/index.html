@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+	<title>LED Controller</title>
+	<meta name="viewport" content="width=400px" />
+
+	<script src="socket.io/socket.io.js"></script>
+	<link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+	<input type="range" id= "led1Slider" min="97" max="113" value="97" step="16" oninput="showValue1(this.value)" />
+
+	<br><br><span id="led1OutputText">97</span>
+
+	  <br><br><input type="range" id= "led2Slider" min="115" max="119" value="115" step="4" oninput="showValue2(this.value)" />
+
+	<br><br><span id="led2OutputText">115</span>
+
+	  <br><br><input type="range" id= "led3Slider" min="100" max="101" value="100" step="1" oninput="showValue3(this.value)" />
+
+	<br><br><span id="led3OutputText">100</span>
+
+	  <br><br><input type="range" id= "led4Slider" min="102" max="114" value="102" step="12" oninput="showValue4(this.value)" />
+
+	<br><br><span id="led4OutputText">102</span>
+
+
+  <a class="slide-button"></a>
+</label>
+
+	<script type="text/javascript">
+		var socket = io.connect();
+
+		socket.on('led1', function (data) {
+			document.getElementById("led1Slider").value = data.value;
+			document.getElementById("led1OutputText").innerHTML = data.value;
+		});
+
+		function showValue1(newValue)
+		{
+			document.getElementById("led1OutputText").innerHTML=newValue;
+			socket.emit('led1', { value: newValue });
+		}
+
+
+		socket.on('led2', function (data) {
+			document.getElementById("led2Slider").value = data.value;
+			document.getElementById("led2OutputText").innerHTML = data.value;
+		});
+
+		function showValue2(newValue)
+		{
+			document.getElementById("led2OutputText").innerHTML=newValue;
+			socket.emit('led2', { value: newValue });
+		}
+
+
+		socket.on('led3', function (data) {
+			document.getElementById("led3Slider").value = data.value;
+			document.getElementById("led3OutputText").innerHTML = data.value;
+		});
+
+		function showValue3(newValue)
+		{
+			document.getElementById("led3OutputText").innerHTML=newValue;
+			socket.emit('led3', { value: newValue });
+		}
+
+
+		socket.on('led4', function (data) {
+			document.getElementById("led4Slider").value = data.value;
+			document.getElementById("led4OutputText").innerHTML = data.value;
+		});
+
+		function showValue4(newValue)
+		{
+			document.getElementById("led4OutputText").innerHTML=newValue;
+			socket.emit('led4', { value: newValue });
+		}
+
+	</script>
+  </body>
+</html>

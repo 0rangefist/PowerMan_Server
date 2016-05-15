@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+	<title>LED Controller</title>
+	<meta name="viewport" content="width=400px" />
+
+	<script src="socket.io/socket.io.js"></script>
+	<link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+	<input type="range" id= "inputSlider1" min="97" max="113" value="97" step="16" oninput="showValue(inputSlider1.value)" />
+
+	<br><br><span id="outputText1">97</span>
+
+
+  <a class="slide-button1"></a>
+</label>
+
+	<script type="text/javascript">
+		var socket1 = io.connect();
+
+		socket1.on('led', function (data) {
+			document.getElementById("inputSlider1").value = data.value;
+			document.getElementById("outputText1").innerHTML = data.value;
+		});
+
+		function showValue(newValue)
+		{
+			document.getElementById("outputText1").innerHTML=newValue;
+			socket1.emit('led', { value: newValue });
+		}
+	</script>
+
+<br><br><input type="range" id= "inputSlider2" min="115" max="119" value="115" step="4" oninput="showValue(inputSlider2.value)" />
+
+	<br><br><span id="outputText2">115</span>
+
+
+  <a class="slide-button"></a>
+</label>
+
+	<script type="text/javascript">
+		var socket2 = io.connect();
+
+		socket2.on('led', function (data) {
+			document.getElementById("inputSlider2").value = data.value;
+			document.getElementById("outputText2").innerHTML = data.value;
+		});
+
+		function showValue(newValue)
+		{
+			document.getElementById("outputText2").innerHTML=newValue;
+			socket2.emit('led', { value: newValue });
+		}
+	</script>
+
+<br><br><input type="range" id= "inputSlider3" min="100" max="101" value="100" step="1" oninput="showValue(inputSlider3.value)" />
+
+	<br><br><span id="outputText3">100</span>
+
+
+  <a class="slide-button3"></a>
+</label>
+
+	<script type="text/javascript">
+		var socket3 = io.connect();
+
+		socket3.on('led', function (data) {
+			document.getElementById("inputSlider3").value = data.value;
+			document.getElementById("outputText3").innerHTML = data.value;
+		});
+
+		function showValue(newValue)
+		{
+			document.getElementById("outputText3").innerHTML=newValue;
+			socket4.emit('led', { value: newValue });
+		}
+	</script>
+
+<br><br><input type="range" id= "inputSlider4" min="102" max="114" value="102" step="12" oninput="showValue(inputSlider4.value)" />
+
+	<br><br><span id="outputText4">102</span>
+
+
+  <a class="slide-button"></a>
+</label>
+
+	<script type="text/javascript">
+		var socket4 = io.connect();
+
+		socket4.on('led', function (data) {
+			document.getElementById("inputSlider4").value = data.value;
+			document.getElementById("outputText4").innerHTML = data.value;
+		});
+
+		function showValue(newValue)
+		{
+			document.getElementById("outputText4").innerHTML=newValue;
+			socket4.emit('led', { value: newValue });
+		}
+	</script>
+  </body>
+</html>
